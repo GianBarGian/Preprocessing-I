@@ -55,6 +55,147 @@ table {
 
 html, body {
 	height: 100%;
+	font-size: 62.5%;
+}
+
+// Mixins
+.space-around() {
+	display: flex;
+	justify-content: space-around;
+}
+
+.column() {
+	display: flex;
+	flex-direction: column;
+}
+
+.pad-bot(@value) {
+	padding-bottom: @value;
 }
 
 
+//.mobile(@mobile-rules) {
+//	@media screen and (max-width: 500px) {
+//		@mobile-rules;
+//	}
+//}
+
+// Variables
+
+@font-default: 'Titillium Web', sans-serif;
+@font-titles: 'Bangers', cursive;
+@border-default: 1px solid black;
+@border-gray-thick: 4px solid lightgray;
+@border-gray-thin: 1px solid lightgray;
+
+// Header
+
+header {
+		border-bottom: @border-default;
+		
+	nav {
+		padding: 20px 0 30px 50%;
+		.space-around();
+		a {
+			text-decoration: none;
+			color: black;
+			font-size: 1.6rem;
+		}
+	}
+}
+
+.container {
+	max-width: 900px;
+	margin: 0 auto;
+	font-size: 1.6rem;
+	.presentation {
+		padding-top: 30px;
+		.pad-bot(35px);
+		border-bottom: @border-gray-thick;
+		img {
+			width: 200px;
+			.pad-bot(20px);
+		}
+		h1 {
+			font-family: @font-titles;
+			font-size: 5rem;
+			.pad-bot(20px);
+		}
+		h2 {
+			font-family: @font-titles;
+			font-size: 2rem;
+			.pad-bot(30px);
+			border-bottom: @border-gray-thick;
+			margin-bottom: 20px;
+		}
+		p {
+			.pad-bot(30px);
+		}
+		a {
+			background: gray;
+			color: white;
+			text-decoration: none;
+			border: @border-default;
+			border-radius: 5px;
+			padding: 5px 2%;
+			margin-left: 40%;
+		}
+	}
+	.content {
+		h3 {
+			font-size: 2.4rem;
+			font-weight: bold;
+			.pad-bot(20px);
+		}
+		.column();
+		padding-top: 50px;
+		.top-div {
+			display: flex;
+			.text-content {
+				width: 55%;
+				padding-right: 5%;
+				.pad-bot(30px);
+			}
+			.skill-list {
+				width: 45%;
+				ul li {
+					border: @border-gray-thin;
+					padding: 10px 0 10px 8%;
+				}
+			}
+		}
+		.bottom-div {
+			.work-history {
+				ul {
+					.years {
+						width: 15%;
+						padding-left: 2%;
+					}
+					.company {
+						width: 25%;
+					}
+					.title {
+						width: 40%;
+					}
+					.tech {
+						width: 15%;
+					}
+					line-height:  3;
+					.list-title {
+						font-size: 1.7rem;
+						font-weight: bold;
+						display: flex;
+					}
+					.list-argument {
+						display: flex;
+					}
+					li {
+						border: @border-gray-thin;
+					}
+				}
+			}
+		}
+	}
+
+	
+} 
